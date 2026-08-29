@@ -1,0 +1,9 @@
+ .fc-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    padding: 0 28px;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+  }

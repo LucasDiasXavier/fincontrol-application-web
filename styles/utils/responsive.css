@@ -1,0 +1,29 @@
+  @media (max-width: 560px) {
+    .fc-navbar { padding: 0 16px; position: relative; }
+    .fc-menu-btn { display: flex; }
+
+    .fc-links {
+      position: absolute;
+      top: 68px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 2px;
+      padding: 10px 16px 18px;
+      background: var(--bg-elevated);
+      border-bottom: 1px solid var(--border);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 180ms ease, opacity 180ms ease;
+    }
+
+    #fc-menu-switch:checked ~ .fc-links {
+      max-height: 260px;
+      opacity: 1;
+    }
+
+    .fc-links a { padding: 12px 14px; }
+    .fc-links a.is-active::after { display: none; }
+  }

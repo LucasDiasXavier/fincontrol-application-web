@@ -1,0 +1,23 @@
+  .fc-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-elevated);
+    cursor: pointer;
+  }
+  .fc-menu-btn span {
+    width: 18px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 150ms ease, opacity 150ms ease;
+  }
+  #fc-menu-switch:checked ~ .fc-menu-btn span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  #fc-menu-switch:checked ~ .fc-menu-btn span:nth-child(2) { opacity: 0; }
+  #fc-menu-switch:checked ~ .fc-menu-btn span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
