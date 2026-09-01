@@ -10,3 +10,8 @@ loadComponent(
   "header-component",
   "./components/header.html"
 );
+
+loadComponent(
+    "home-component",
+    "./pages/home.html"
+);

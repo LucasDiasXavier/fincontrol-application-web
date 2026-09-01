@@ -1,0 +1,687 @@
+/* ============================================
+   FinControl — Home
+   ============================================ */
+
+main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 36px 28px 60px;
+}
+
+
+/* ============================================
+   Cabeçalho
+   ============================================ */
+
+.fc-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.fc-page-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    margin: 0 0 4px;
+}
+
+.fc-page-subtitle {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 14.5px;
+}
+
+
+/* ============================================
+   Botão principal
+   ============================================ */
+
+.fc-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background: var(--primary);
+    color: #FFFFFF;
+
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 10px;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition:
+        background 150ms ease,
+        transform 150ms ease;
+}
+
+.fc-btn-primary:hover {
+    background: #1740B8;
+}
+
+.fc-btn-primary:active {
+    transform: scale(0.97);
+}
+
+.fc-btn-primary svg {
+    width: 16px;
+    height: 16px;
+}
+
+.fc-btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* ============================================
+   Abas
+   ============================================ */
+
+#fc-tab-dashboard,
+#fc-tab-resumo {
+    display: none;
+}
+
+.fc-tab-nav {
+    display: inline-flex;
+
+    gap: 4px;
+
+    background: var(--bg-elevated);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    padding: 4px;
+
+    margin-bottom: 24px;
+}
+
+.fc-tab-nav label {
+    padding: 8px 16px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--text-muted);
+
+    cursor: pointer;
+
+    transition:
+        background 150ms ease,
+        color 150ms ease;
+
+    user-select: none;
+}
+
+.fc-tab-nav label:hover {
+    color: var(--text);
+}
+
+#fc-tab-dashboard:checked~.fc-tab-nav label[for="fc-tab-dashboard"],
+
+#fc-tab-resumo:checked~.fc-tab-nav label[for="fc-tab-resumo"] {
+
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+
+/* ============================================
+   Painéis
+   ============================================ */
+
+.fc-tab-panel {
+    display: none;
+}
+
+#fc-tab-dashboard:checked~#fc-panel-dashboard {
+    display: block;
+}
+
+#fc-tab-resumo:checked~#fc-panel-resumo {
+    display: block;
+}
+
+
+/* ============================================
+   Cards
+   ============================================ */
+
+.fc-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.fc-card {
+    background: var(--bg-elevated);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.fc-card-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fc-card-label {
+    font-size: 13.5px;
+    font-weight: 600;
+
+    color: var(--text-muted);
+}
+
+.fc-card-icon {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.fc-card-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.fc-card.saldo .fc-card-icon {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.fc-card.receitas .fc-card-icon {
+    color: #16a34a;
+    background: #dcfce7;
+}
+
+.fc-card.despesas .fc-card-icon {
+   background: #fee2e2;
+   color: #dc2626;
+}
+
+.fc-card-value {
+    font-family: 'IBM Plex Mono', monospace;
+
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.fc-card.receitas .fc-card-value {
+    color: #16a34a !important;
+}
+
+.fc-card.despesas .fc-card-value {
+    color: #dc2626 !important;
+}
+
+.fc-card-note {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+
+/* ============================================
+   Seção
+   ============================================ */
+
+.fc-section {
+    background: var(--bg-elevated);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 22px;
+}
+
+.fc-section-title {
+    font-size: 16px;
+    font-weight: 700;
+
+    margin: 0 0 16px;
+}
+
+
+/* ============================================
+   Tabela
+   ============================================ */
+
+table.fc-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 14px;
+}
+
+.fc-table th {
+    text-align: left;
+
+    color: var(--text-muted);
+
+    font-weight: 600;
+
+    font-size: 12.5px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.03em;
+
+    padding: 0 10px 10px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.fc-table td {
+    padding: 12px 10px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.fc-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ============================================
+   Estado vazio
+   ============================================ */
+
+.fc-empty-row td {
+    text-align: center;
+
+    color: var(--text-muted);
+
+    padding: 28px 10px;
+}
+
+
+/* ============================================
+   Tag
+   ============================================ */
+
+.fc-tag {
+    display: inline-block;
+
+    padding: 3px 10px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    background: var(--primary-soft);
+
+    color: var(--primary);
+}
+
+
+/* ============================================
+   Valores
+   ============================================ */
+
+.fc-amount.positivo {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.fc-amount.negativo {
+    color: var(--danger);
+    font-weight: 600;
+}
+
+
+/* ============================================
+   Botão excluir
+   ============================================ */
+
+.fc-delete-btn {
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    color: var(--text-muted);
+
+    padding: 4px;
+
+    border-radius: 6px;
+
+    display: inline-flex;
+}
+
+.fc-delete-btn:hover {
+    color: var(--danger);
+
+    background: var(--danger-soft);
+}
+
+.fc-delete-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* ============================================
+   Modal
+   ============================================ */
+
+.fc-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(15, 23, 42, 0.45);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 200;
+}
+
+.fc-modal-overlay.is-open {
+    display: flex;
+}
+
+.fc-modal {
+    background: var(--bg-elevated);
+
+    border-radius: var(--radius);
+
+    padding: 26px;
+
+    width: 100%;
+
+    max-width: 420px;
+}
+
+.fc-modal-title {
+    font-size: 17px;
+
+    font-weight: 700;
+
+    margin: 0 0 18px;
+}
+
+
+/* ============================================
+   Formulário
+   ============================================ */
+
+.fc-field {
+    margin-bottom: 14px;
+}
+
+.fc-field label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: var(--text-muted);
+
+    margin-bottom: 6px;
+}
+
+.fc-field input,
+.fc-field select {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 14px;
+
+    color: var(--text);
+
+    background: var(--bg);
+}
+
+.fc-field input:focus,
+.fc-field select:focus {
+    outline: 2px solid var(--accent);
+
+    outline-offset: 1px;
+}
+
+
+/* ============================================
+   Tipo Receita / Despesa
+   ============================================ */
+
+.fc-type-toggle {
+    display: flex;
+    gap: 8px;
+}
+
+.fc-type-toggle input {
+    display: none;
+}
+
+.fc-type-toggle label {
+    flex: 1;
+
+    text-align: center;
+
+    padding: 9px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    font-size: 13.5px;
+
+    font-weight: 600;
+
+    color: var(--text-muted);
+
+    cursor: pointer;
+}
+
+#fc-tipo-receita:checked~label[for="fc-tipo-receita"] {
+
+    background: var(--success-soft);
+
+    color: var(--success);
+
+    border-color: var(--success);
+}
+
+#fc-tipo-despesa:checked~label[for="fc-tipo-despesa"] {
+
+    background: var(--danger-soft);
+
+    color: var(--danger);
+
+    border-color: var(--danger);
+}
+
+
+/* ============================================
+   Ações do Modal
+   ============================================ */
+
+.fc-modal-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.fc-btn-secondary {
+    flex: 1;
+
+    background: var(--bg);
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+    padding: 10px;
+
+    border-radius: 9px;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.fc-btn-secondary:hover {
+    background: var(--primary-soft);
+}
+
+.fc-modal-actions .fc-btn-primary {
+    flex: 1;
+
+    justify-content: center;
+}
+
+
+/* ============================================
+   Toast
+   ============================================ */
+
+.fc-toast {
+    position: fixed;
+
+    bottom: 24px;
+    left: 50%;
+
+    transform:
+        translateX(-50%) translateY(0);
+
+    background: var(--text);
+
+    color: #FFFFFF;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.25);
+
+    z-index: 300;
+
+    animation:
+        fc-toast-in 200ms ease;
+}
+
+.fc-toast-erro {
+    background: var(--danger);
+}
+
+.fc-toast-sucesso {
+    background: var(--primary);
+}
+
+.fc-toast-saindo {
+    opacity: 0;
+
+    transform:
+        translateX(-50%) translateY(8px);
+
+    transition:
+        opacity 200ms ease,
+        transform 200ms ease;
+}
+
+@keyframes fc-toast-in {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-50%) translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-50%) translateY(0);
+    }
+
+}
+
+
+/* ============================================
+   Responsividade
+   ============================================ */
+
+@media (max-width: 760px) {
+
+    .fc-stats {
+        grid-template-columns: 1fr;
+    }
+
+    table.fc-table {
+        display: block;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+    }
+
+    .fc-page-header {
+        flex-direction: column;
+    }
+
+    .fc-btn-primary {
+        align-self: flex-start;
+    }
+
+}
