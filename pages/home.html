@@ -1,273 +1,120 @@
 <main>
-    <!-- Cabeçalho da página -->
-    <div class="fc-page-header">
-        <div>
-            <h1 class="fc-page-title">
-                Dashboard
-            </h1>
+  <!-- Cabeçalho da página -->
+  <div class="fc-page-header">
+    <div>
+      <h1 class="fc-page-title">Dashboard</h1>
+      <p class="fc-page-subtitle">Visão geral das suas finanças</p>
+    </div>
+  </div>
 
-            <p class="fc-page-subtitle">
-                Visão geral das suas finanças
-            </p>
-        </div>
+  <!-- Abas -->
+  <input type="radio" name="fc-tabs" id="fc-tab-dashboard" checked />
+  <input type="radio" name="fc-tabs" id="fc-tab-resumo" />
+  <input type="radio" name="fc-tabs" id="fc-tab-novo" />
 
-        <button type="button" class="fc-btn-primary" id="fc-open-modal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 5v14M5 12h14" />
+  <div class="fc-tab-nav">
+    <label for="fc-tab-dashboard">Dashboard</label>
+    <label for="fc-tab-resumo">Resumo Financeiro</label>
+    <label for="fc-tab-novo">Novo Lançamento</label>
+  </div>
+
+  <!-- Painel Dashboard -->
+  <div class="fc-tab-panel" id="fc-panel-dashboard">
+    <section class="fc-stats">
+      <!-- Saldo -->
+      <div class="fc-card saldo">
+        <div class="fc-card-top">
+          <span class="fc-card-label">Saldo atual</span>
+          <span class="fc-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="20" height="13" rx="2" />
+              <path d="M2 10h20" />
+              <path d="M6 15h4" />
             </svg>
-            Novo Lançamento
-        </button>
+          </span>
+        </div>
+        <span class="fc-card-value" id="fc-valor-saldo">R$ 0,00</span>
+        <span class="fc-card-note">Atualizado agora</span>
+      </div>
 
-    </div>
+      <!-- Receitas -->
+      <div class="fc-card receitas">
+        <div class="fc-card-top">
+          <span class="fc-card-label">Receitas</span>
+          <span class="fc-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19V5" />
+              <path d="M5 12l7-7 7 7" />
+            </svg>
+          </span>
+        </div>
+        <span class="fc-card-value" id="fc-valor-receitas">R$ 0,00</span>
+        <span class="fc-card-note">Este mês</span>
+      </div>
 
+      <!-- Despesas -->
+      <div class="fc-card despesas">
+        <div class="fc-card-top">
+          <span class="fc-card-label">Despesas</span>
+          <span class="fc-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 5v14" />
+              <path d="M19 12l-7 7-7-7" />
+            </svg>
+          </span>
+        </div>
+        <span class="fc-card-value" id="fc-valor-despesas">R$ 0,00</span>
+        <span class="fc-card-note">Este mês</span>
+      </div>
+    </section>
+  </div>
 
-    <!-- Abas -->
-    <input type="radio" name="fc-tabs" id="fc-tab-dashboard" checked />
+  <!-- Painel Resumo Financeiro -->
+  <div class="fc-tab-panel" id="fc-panel-resumo">
+    <section class="fc-section">
+      <h2 class="fc-section-title">Resumo financeiro</h2>
+      <table class="fc-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Valor</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="fc-table-body"></tbody>
+      </table>
+    </section>
+  </div>
 
-    <input type="radio" name="fc-tabs" id="fc-tab-resumo" />
-
-    <div class="fc-tab-nav">
-
-        <label for="fc-tab-dashboard">
-            Dashboard
-        </label>
-
-        <label for="fc-tab-resumo">
-            Resumo Financeiro
-        </label>
-
-    </div>
-
-    <!-- Painel Dashboard -->
-    <div class="fc-tab-panel" id="fc-panel-dashboard">
-
-        <section class="fc-stats">
-
-            <!-- Saldo -->
-            <div class="fc-card saldo">
-
-                <div class="fc-card-top">
-
-                    <span class="fc-card-label">
-                        Saldo atual
-                    </span>
-
-                    <span class="fc-card-icon">
-
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="6" width="20" height="13" rx="2" />
-                            <path d="M2 10h20" />
-                            <path d="M6 15h4" />
-                        </svg>
-
-                    </span>
-
-                </div>
-
-                <span class="fc-card-value" id="fc-valor-saldo">
-                    R$ 0,00
-                </span>
-
-                <span class="fc-card-note">
-                    Atualizado agora
-                </span>
-
-            </div>
-
-
-            <!-- Receitas -->
-            <div class="fc-card receitas">
-
-                <div class="fc-card-top">
-
-                    <span class="fc-card-label">
-                        Receitas
-                    </span>
-
-                    <span class="fc-card-icon">
-
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 19V5" />
-                            <path d="M5 12l7-7 7 7" />
-                        </svg>
-                    </span>
-                </div>
-
-                <span class="fc-card-value" id="fc-valor-receitas">
-                    R$ 0,00
-                </span>
-
-                <span class="fc-card-note">
-                    Este mês
-                </span>
-
-            </div>
-
-            <!-- Despesas -->
-            <div class="fc-card despesas">
-
-                <div class="fc-card-top">
-
-                    <span class="fc-card-label">
-                        Despesas
-                    </span>
-
-                    <span class="fc-card-icon">
-
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 5v14" />
-                            <path d="M19 12l-7 7-7-7" />
-                        </svg>
-                    </span>
-                </div>
-
-                <span class="fc-card-value" id="fc-valor-despesas">
-                    R$ 0,00
-                </span>
-
-                <span class="fc-card-note">
-                    Este mês
-                </span>
-
-            </div>
-
-        </section>
-
-    </div>
-
-
-    <!-- Painel Resumo Financeiro -->
-    <div class="fc-tab-panel" id="fc-panel-resumo">
-
-        <section class="fc-section">
-
-            <h2 class="fc-section-title">
-                Resumo financeiro
-            </h2>
-
-            <table class="fc-table">
-
-                <thead>
-
-                    <tr>
-                        <th>Data</th>
-                        <th>Descrição</th>
-                        <th>Categoria</th>
-                        <th>Valor</th>
-                        <th></th>
-                    </tr>
-
-                </thead>
-
-                <tbody id="fc-table-body">
-                </tbody>
-
-            </table>
-
-        </section>
-
-    </div>
-
+  <!-- Painel Novo Lançamento -->
+  <div class="fc-tab-panel" id="fc-panel-novo">
+    <section class="fc-section">
+      <h2 class="fc-section-title">Novo lançamento</h2>
+      <form>
+        <div class="fc-field">
+          <label for="descricao">Descrição</label>
+          <input type="text" id="descricao" placeholder="Ex: Conta de luz" />
+        </div>
+        <div class="fc-field">
+          <label for="valor">Valor</label>
+          <input type="number" id="valor" placeholder="R$ 0,00" />
+        </div>
+        <div class="fc-type-toggle">
+          <input type="radio" name="tipo" id="fc-tipo-receita" />
+          <label for="fc-tipo-receita">Receita</label>
+          <input type="radio" name="tipo" id="fc-tipo-despesa" />
+          <label for="fc-tipo-despesa">Despesa</label>
+        </div>
+        <div class="fc-modal-actions">
+          <button type="submit" class="fc-btn-primary">Salvar</button>
+          <button type="reset" class="fc-btn-secondary">Cancelar</button>
+        </div>
+      </form>
+    </section>
+  </div>
 </main>
-
-
-<!-- Modal de novo lançamento -->
-<div class="fc-modal-overlay" id="fc-modal-overlay">
-
-    <div class="fc-modal">
-
-        <h2 class="fc-modal-title">
-            Novo Lançamento
-        </h2>
-
-
-        <form id="fc-form">
-
-            <!-- Tipo -->
-            <div class="fc-field fc-type-toggle">
-
-                <input type="radio" name="fc-tipo" id="fc-tipo-receita" value="receita" checked />
-
-                <label for="fc-tipo-receita">
-                    Receita
-                </label>
-
-
-                <input type="radio" name="fc-tipo" id="fc-tipo-despesa" value="despesa" />
-
-                <label for="fc-tipo-despesa">
-                    Despesa
-                </label>
-
-            </div>
-
-
-            <!-- Descrição -->
-            <div class="fc-field">
-
-                <label for="fc-input-descricao">
-                    Título
-                </label>
-
-                <input type="text" id="fc-input-descricao" placeholder="Ex: Salário, Supermercado..." required />
-
-            </div>
-
-
-            <!-- Categoria -->
-            <div class="fc-field">
-
-                <label for="fc-input-categoria">
-                    Categoria
-                </label>
-
-                <input type="text" id="fc-input-categoria" placeholder="Ex: Alimentação, Moradia..." required />
-
-            </div>
-
-
-            <!-- Valor -->
-            <div class="fc-field">
-
-                <label for="fc-input-valor">
-                    Valor (R$)
-                </label>
-
-                <input type="number" id="fc-input-valor" step="0.01" min="0" placeholder="0,00" required />
-
-            </div>
-
-
-            <!-- Data -->
-            <div class="fc-field">
-
-                <label for="fc-input-data">
-                    Data
-                </label>
-
-                <input type="date" id="fc-input-data" required />
-
-            </div>
-
-
-            <!-- Ações -->
-            <div class="fc-modal-actions">
-
-                <button type="button" class="fc-btn-secondary" id="fc-close-modal">
-                    Cancelar
-                </button>
-
-                <button type="submit" class="fc-btn-primary">
-                    Salvar
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
-
-</div>

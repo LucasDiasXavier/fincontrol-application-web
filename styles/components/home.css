@@ -19,6 +19,7 @@ main {
     justify-content: space-between;
     gap: 16px;
     margin-bottom: 24px;
+    flex-wrap: wrap;
 }
 
 .fc-page-title {
@@ -42,26 +43,17 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-
     background: var(--primary);
     color: #FFFFFF;
-
     border: none;
-
     padding: 11px 18px;
-
     border-radius: 10px;
-
     font-family: 'Manrope', sans-serif;
     font-size: 14.5px;
     font-weight: 700;
-
     cursor: pointer;
     white-space: nowrap;
-
-    transition:
-        background 150ms ease,
-        transform 150ms ease;
+    transition: background 150ms ease, transform 150ms ease;
 }
 
 .fc-btn-primary:hover {
@@ -88,42 +80,32 @@ main {
    ============================================ */
 
 #fc-tab-dashboard,
-#fc-tab-resumo {
+#fc-tab-resumo,
+#fc-tab-novo {
     display: none;
 }
 
 .fc-tab-nav {
-    display: inline-flex;
-
-    gap: 4px;
-
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
     background: var(--bg-elevated);
-
     border: 1px solid var(--border);
-
     border-radius: 10px;
-
-    padding: 4px;
-
+    padding: 6px;
     margin-bottom: 24px;
 }
 
 .fc-tab-nav label {
-    padding: 8px 16px;
-
+    flex: 1;
+    text-align: center;
+    padding: 10px 14px;
     border-radius: 8px;
-
     font-size: 14px;
     font-weight: 600;
-
     color: var(--text-muted);
-
     cursor: pointer;
-
-    transition:
-        background 150ms ease,
-        color 150ms ease;
-
+    transition: background 150ms ease, color 150ms ease;
     user-select: none;
 }
 
@@ -131,10 +113,9 @@ main {
     color: var(--text);
 }
 
-#fc-tab-dashboard:checked~.fc-tab-nav label[for="fc-tab-dashboard"],
-
-#fc-tab-resumo:checked~.fc-tab-nav label[for="fc-tab-resumo"] {
-
+#fc-tab-dashboard:checked ~ .fc-tab-nav label[for="fc-tab-dashboard"],
+#fc-tab-resumo:checked ~ .fc-tab-nav label[for="fc-tab-resumo"],
+#fc-tab-novo:checked ~ .fc-tab-nav label[for="fc-tab-novo"] {
     background: var(--primary);
     color: #FFFFFF;
 }
@@ -148,11 +129,9 @@ main {
     display: none;
 }
 
-#fc-tab-dashboard:checked~#fc-panel-dashboard {
-    display: block;
-}
-
-#fc-tab-resumo:checked~#fc-panel-resumo {
+#fc-tab-dashboard:checked ~ #fc-panel-dashboard,
+#fc-tab-resumo:checked ~ #fc-panel-resumo,
+#fc-tab-novo:checked ~ #fc-panel-novo {
     display: block;
 }
 
@@ -163,31 +142,22 @@ main {
 
 .fc-stats {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
 }
 
 .fc-card {
     background: var(--bg-elevated);
-
     border: 1px solid var(--border);
-
     border-radius: var(--radius);
-
     padding: 20px;
-
     display: flex;
     flex-direction: column;
-
     gap: 10px;
 }
 
 .fc-card-top {
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 }
@@ -195,18 +165,14 @@ main {
 .fc-card-label {
     font-size: 13.5px;
     font-weight: 600;
-
     color: var(--text-muted);
 }
 
 .fc-card-icon {
     width: 34px;
     height: 34px;
-
     border-radius: 9px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
 }
@@ -233,7 +199,6 @@ main {
 
 .fc-card-value {
     font-family: 'IBM Plex Mono', monospace;
-
     font-size: 24px;
     font-weight: 600;
 }
@@ -258,18 +223,14 @@ main {
 
 .fc-section {
     background: var(--bg-elevated);
-
     border: 1px solid var(--border);
-
     border-radius: var(--radius);
-
     padding: 22px;
 }
 
 .fc-section-title {
     font-size: 16px;
     font-weight: 700;
-
     margin: 0 0 16px;
 }
 
@@ -280,33 +241,23 @@ main {
 
 table.fc-table {
     width: 100%;
-
     border-collapse: collapse;
-
     font-size: 14px;
 }
 
 .fc-table th {
     text-align: left;
-
     color: var(--text-muted);
-
     font-weight: 600;
-
     font-size: 12.5px;
-
     text-transform: uppercase;
-
     letter-spacing: 0.03em;
-
     padding: 0 10px 10px;
-
     border-bottom: 1px solid var(--border);
 }
 
 .fc-table td {
     padding: 12px 10px;
-
     border-bottom: 1px solid var(--border);
 }
 
@@ -321,181 +272,51 @@ table.fc-table {
 
 .fc-empty-row td {
     text-align: center;
-
     color: var(--text-muted);
-
     padding: 28px 10px;
 }
 
-
 /* ============================================
-   Tag
-   ============================================ */
-
-.fc-tag {
-    display: inline-block;
-
-    padding: 3px 10px;
-
-    border-radius: 999px;
-
-    font-size: 12px;
-    font-weight: 600;
-
-    background: var(--primary-soft);
-
-    color: var(--primary);
-}
-
-
-/* ============================================
-   Valores
-   ============================================ */
-
-.fc-amount.positivo {
-    color: var(--success);
-    font-weight: 600;
-}
-
-.fc-amount.negativo {
-    color: var(--danger);
-    font-weight: 600;
-}
-
-
-/* ============================================
-   Botão excluir
-   ============================================ */
-
-.fc-delete-btn {
-    background: none;
-
-    border: none;
-
-    cursor: pointer;
-
-    color: var(--text-muted);
-
-    padding: 4px;
-
-    border-radius: 6px;
-
-    display: inline-flex;
-}
-
-.fc-delete-btn:hover {
-    color: var(--danger);
-
-    background: var(--danger-soft);
-}
-
-.fc-delete-btn svg {
-    width: 16px;
-    height: 16px;
-}
-
-
-/* ============================================
-   Modal
-   ============================================ */
-
-.fc-modal-overlay {
-    position: fixed;
-
-    inset: 0;
-
-    background:
-        rgba(15, 23, 42, 0.45);
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-
-    z-index: 200;
-}
-
-.fc-modal-overlay.is-open {
-    display: flex;
-}
-
-.fc-modal {
-    background: var(--bg-elevated);
-
-    border-radius: var(--radius);
-
-    padding: 26px;
-
-    width: 100%;
-
-    max-width: 420px;
-}
-
-.fc-modal-title {
-    font-size: 17px;
-
-    font-weight: 700;
-
-    margin: 0 0 18px;
-}
-
-
-/* ============================================
-   Formulário
+   Formulário atualizado
    ============================================ */
 
 .fc-field {
-    margin-bottom: 14px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
 }
 
 .fc-field label {
-    display: block;
-
-    font-size: 13px;
-
+    font-size: 14px;
     font-weight: 600;
-
     color: var(--text-muted);
-
     margin-bottom: 6px;
 }
 
 .fc-field input,
 .fc-field select {
     width: 100%;
-
-    padding: 10px 12px;
-
+    padding: 12px 14px;
     border: 1px solid var(--border);
-
-    border-radius: 9px;
-
+    border-radius: 10px;
     font-family: 'Manrope', sans-serif;
-
-    font-size: 14px;
-
+    font-size: 15px;
     color: var(--text);
-
     background: var(--bg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .fc-field input:focus,
 .fc-field select:focus {
-    outline: 2px solid var(--accent);
-
-    outline-offset: 1px;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+    outline: none;
 }
 
-
-/* ============================================
-   Tipo Receita / Despesa
-   ============================================ */
-
+/* Toggle Receita/Despesa mais moderno */
 .fc-type-toggle {
     display: flex;
-    gap: 8px;
+    gap: 10px;
 }
 
 .fc-type-toggle input {
@@ -504,184 +325,122 @@ table.fc-table {
 
 .fc-type-toggle label {
     flex: 1;
-
     text-align: center;
-
-    padding: 9px;
-
+    padding: 12px;
     border: 1px solid var(--border);
-
-    border-radius: 9px;
-
-    font-size: 13.5px;
-
+    border-radius: 10px;
+    font-size: 14px;
     font-weight: 600;
-
     color: var(--text-muted);
-
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-#fc-tipo-receita:checked~label[for="fc-tipo-receita"] {
-
+#fc-tipo-receita:checked ~ label[for="fc-tipo-receita"] {
     background: var(--success-soft);
-
     color: var(--success);
-
     border-color: var(--success);
 }
 
-#fc-tipo-despesa:checked~label[for="fc-tipo-despesa"] {
-
+#fc-tipo-despesa:checked ~ label[for="fc-tipo-despesa"] {
     background: var(--danger-soft);
-
     color: var(--danger);
-
     border-color: var(--danger);
 }
 
-
-/* ============================================
-   Ações do Modal
-   ============================================ */
-
+/* Ações do formulário */
 .fc-modal-actions {
     display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
 
-    gap: 10px;
+.fc-btn-primary {
+    flex: 1;
+    justify-content: center;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
 
-    margin-top: 20px;
+.fc-btn-primary:hover {
+    background: #1740B8;
+}
+
+.fc-btn-primary:active {
+    transform: scale(0.97);
 }
 
 .fc-btn-secondary {
     flex: 1;
-
     background: var(--bg);
-
     border: 1px solid var(--border);
-
     color: var(--text);
-
-    padding: 10px;
-
-    border-radius: 9px;
-
-    font-family: 'Manrope', sans-serif;
-
-    font-size: 14px;
-
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 15px;
     font-weight: 600;
-
     cursor: pointer;
+    transition: background 0.2s ease;
 }
 
 .fc-btn-secondary:hover {
     background: var(--primary-soft);
 }
 
-.fc-modal-actions .fc-btn-primary {
-    flex: 1;
-
-    justify-content: center;
-}
-
-
-/* ============================================
-   Toast
-   ============================================ */
-
-.fc-toast {
-    position: fixed;
-
-    bottom: 24px;
-    left: 50%;
-
-    transform:
-        translateX(-50%) translateY(0);
-
-    background: var(--text);
-
-    color: #FFFFFF;
-
-    padding: 12px 20px;
-
-    border-radius: 10px;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    box-shadow:
-        0 8px 24px rgba(15, 23, 42, 0.25);
-
-    z-index: 300;
-
-    animation:
-        fc-toast-in 200ms ease;
-}
-
-.fc-toast-erro {
-    background: var(--danger);
-}
-
-.fc-toast-sucesso {
-    background: var(--primary);
-}
-
-.fc-toast-saindo {
-    opacity: 0;
-
-    transform:
-        translateX(-50%) translateY(8px);
-
-    transition:
-        opacity 200ms ease,
-        transform 200ms ease;
-}
-
-@keyframes fc-toast-in {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateX(-50%) translateY(8px);
+/* Responsividade do formulário */
+@media (max-width: 600px) {
+    .fc-modal-actions {
+        flex-direction: column;
     }
 
-    to {
-        opacity: 1;
-
-        transform:
-            translateX(-50%) translateY(0);
+    .fc-btn-primary,
+    .fc-btn-secondary {
+        width: 100%;
     }
-
 }
+
 
 
 /* ============================================
    Responsividade
    ============================================ */
 
-@media (max-width: 760px) {
+@media (max-width: 1024px) {
+    .fc-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
+@media (max-width: 760px) {
     .fc-stats {
         grid-template-columns: 1fr;
     }
 
-    table.fc-table {
-        display: block;
-
-        overflow-x: auto;
-
-        white-space: nowrap;
+    .fc-page-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .fc-page-header {
+    .fc-tab-nav {
         flex-direction: column;
     }
 
-    .fc-btn-primary {
-        align-self: flex-start;
+    .fc-tab-nav label {
+        flex: none;
+        width: 100%;
     }
 
+    table.fc-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 }
