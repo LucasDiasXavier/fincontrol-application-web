@@ -1,0 +1,201 @@
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.fc-footer {
+    width: 100%;
+    margin-top: 14rem;
+    background: var(--fc-bg-secondary, #1f335f);
+    color: var(--fc-text-primary, #f9fafb);
+    border-top: 1px solid var(--fc-border-color, #1f2937);
+}
+
+
+/* =========================================
+   CONTAINER
+   ========================================= */
+
+.fc-footer-container {
+    width: min(100% - 2rem, 1200px);
+    margin: 0 auto;
+    padding: 3rem 0;
+
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.8fr);
+    gap: 3rem;
+}
+
+
+/* =========================================
+   IDENTIDADE
+   ========================================= */
+
+.fc-footer-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.fc-footer-title {
+    margin: 0 0 0.5rem;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    letter-spacing: -0.02em;
+}
+
+
+.fc-footer-description {
+    max-width: 280px;
+    margin: 0;
+
+    color: var(--fc-text-secondary, #9ca3af);
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   RECURSOS
+   ========================================= */
+
+.fc-footer-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+
+.fc-footer-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+
+.fc-footer-feature-icon {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.25rem;
+    height: 2.25rem;
+
+    border-radius: 0.5rem;
+
+    background: var(--fc-bg-tertiary, #1f2937);
+
+    font-size: 1.1rem;
+}
+
+
+.fc-footer-feature h3 {
+    margin: 0 0 0.4rem;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+
+.fc-footer-feature p {
+    margin: 0;
+
+    color: var(--fc-text-secondary, #9ca3af);
+
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   PARTE INFERIOR
+   ========================================= */
+
+.fc-footer-bottom {
+    width: min(100% - 2rem, 1200px);
+    margin: 0 auto;
+
+    padding: 1.25rem 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid var(--fc-border-color, #1f2937);
+
+    color: var(--fc-text-secondary, #9ca3af);
+
+    font-size: 0.8rem;
+}
+
+
+.fc-footer-bottom p {
+    margin: 0;
+}
+
+
+.fc-footer-version {
+    font-weight: 500;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .fc-footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .fc-footer-brand {
+        text-align: center;
+        align-items: center;
+    }
+
+    .fc-footer-features {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .fc-footer-container {
+        width: min(100% - 2rem, 500px);
+        padding: 2.5rem 0;
+    }
+
+    .fc-footer-features {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .fc-footer-feature {
+        padding: 0.75rem;
+
+        border-radius: 0.5rem;
+
+        background: var(--fc-bg-tertiary, #1f2937);
+    }
+
+    .fc-footer-bottom {
+        width: min(100% - 2rem, 500px);
+
+        flex-direction: column;
+        gap: 0.5rem;
+
+        text-align: center;
+    }
+}

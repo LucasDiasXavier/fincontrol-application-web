@@ -85,6 +85,14 @@ main {
     display: none;
 }
 
+label .fa-coins,label .fa-chart-line,
+label .fa-money-bill-transfer {
+    font-size: 1.2rem;
+    margin-left: 0.4rem;
+    color: #b5f0cb;
+
+}
+
 .fc-tab-nav {
     display: flex;
     flex-wrap: wrap;
@@ -313,6 +321,32 @@ table.fc-table {
     outline: none;
 }
 
+.fc-desc-outros-input {
+    display: none;
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--bg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fc-desc-outros-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+    outline: none;
+}
+
+.fc-desc-outros-input.is-visible {
+    display: block;
+}
+
+
+
 /* Toggle Receita/Despesa mais moderno */
 .fc-type-toggle {
     display: flex;
@@ -334,6 +368,7 @@ table.fc-table {
     color: var(--text-muted);
     cursor: pointer;
     transition: all 0.2s ease;
+    
 }
 
 #fc-tipo-receita:checked ~ label[for="fc-tipo-receita"] {
@@ -393,6 +428,39 @@ table.fc-table {
 
 .fc-btn-secondary:hover {
     background: var(--primary-soft);
+}
+
+/* ============================================
+   Botão de excluir (lixeira)
+   ============================================ */
+
+.fc-delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: background 150ms ease, color 150ms ease;
+}
+
+.fc-delete-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.fc-delete-btn:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.fc-delete-btn:active {
+    transform: scale(0.92);
 }
 
 /* Responsividade do formulário */

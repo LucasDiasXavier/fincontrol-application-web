@@ -1,17 +1,51 @@
 async function loadComponent(id, file) {
-  const response = await fetch(file);
 
-  const component = await response.text();
+    const response =
+        await fetch(file);
 
-  document.getElementById(id).innerHTML = component;
+
+    if (!response.ok) {
+
+        throw new Error(
+            `Erro ao carregar: ${file}`
+        );
+
+    }
+
+
+    const component =
+        await response.text();
+
+
+    document.getElementById(id).innerHTML =
+        component;
+
 }
 
-loadComponent(
-  "header-component",
-  "./components/header.html"
-);
 
-loadComponent(
-    "home-component",
-    "./pages/home.html"
-);
+async function carregarPagina() {
+
+    await loadComponent(
+        'header-component',
+        './pages/header.html'
+    );
+
+
+    await loadComponent(
+        'home-component',
+        './pages/home.html'
+    );
+
+
+    await import('./home.js');
+
+
+    await loadComponent(
+        'footer-component',
+        './pages/footer.html'
+    );
+
+}
+
+
+carregarPagina();

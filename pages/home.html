@@ -13,9 +13,19 @@
   <input type="radio" name="fc-tabs" id="fc-tab-novo" />
 
   <div class="fc-tab-nav">
-    <label for="fc-tab-dashboard">Dashboard</label>
-    <label for="fc-tab-resumo">Resumo Financeiro</label>
-    <label for="fc-tab-novo">Novo Lançamento</label>
+    <label for="fc-tab-dashboard"
+      >Dashboard
+      <i class="fa-solid fa-chart-line"></i>
+    </label>
+    <label for="fc-tab-resumo"
+      >Resumo Financeiro
+      <i class="fa-solid fa-coins"></i>
+    </label>
+
+    <label for="fc-tab-novo"
+      >Novo Lançamento
+      <i class="fa-solid fa-money-bill-transfer"></i>
+    </label>
   </div>
 
   <!-- Painel Dashboard -->
@@ -26,8 +36,14 @@
         <div class="fc-card-top">
           <span class="fc-card-label">Saldo atual</span>
           <span class="fc-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <rect x="2" y="6" width="20" height="13" rx="2" />
               <path d="M2 10h20" />
               <path d="M6 15h4" />
@@ -43,10 +59,16 @@
         <div class="fc-card-top">
           <span class="fc-card-label">Receitas</span>
           <span class="fc-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 19V5" />
-              <path d="M5 12l7-7 7 7" />
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 6V18" />
+              <path d="M6 12H18" />
             </svg>
           </span>
         </div>
@@ -59,10 +81,15 @@
         <div class="fc-card-top">
           <span class="fc-card-label">Despesas</span>
           <span class="fc-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 5v14" />
-              <path d="M19 12l-7 7-7-7" />
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12H19" />
             </svg>
           </span>
         </div>
@@ -95,21 +122,36 @@
   <div class="fc-tab-panel" id="fc-panel-novo">
     <section class="fc-section">
       <h2 class="fc-section-title">Novo lançamento</h2>
-      <form>
+      <form id="fc-form">
         <div class="fc-field">
           <label for="descricao">Descrição</label>
-          <input type="text" id="descricao" placeholder="Ex: Conta de luz" />
+          <select id="descricao">
+            <option value="Conta de água">Conta de água</option>
+            <option value="Conta de luz">Conta de luz</option>
+            <option value="Conta de internet">Conta de internet</option>
+            <option value="Cofrinho">Cofrinho</option>
+            <option value="outros">Outros</option>
+          </select>
+          <input
+            type="text"
+            id="descricao-outros"
+            class="fc-desc-outros-input"
+            placeholder="Digite a descrição"
+          />
         </div>
+
         <div class="fc-field">
           <label for="valor">Valor</label>
           <input type="number" id="valor" placeholder="R$ 0,00" />
         </div>
+
         <div class="fc-type-toggle">
           <input type="radio" name="tipo" id="fc-tipo-receita" />
           <label for="fc-tipo-receita">Receita</label>
           <input type="radio" name="tipo" id="fc-tipo-despesa" />
           <label for="fc-tipo-despesa">Despesa</label>
         </div>
+
         <div class="fc-modal-actions">
           <button type="submit" class="fc-btn-primary">Salvar</button>
           <button type="reset" class="fc-btn-secondary">Cancelar</button>

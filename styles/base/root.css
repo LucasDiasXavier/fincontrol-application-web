@@ -7,4 +7,8 @@
     --accent: #38BDF8;
     --border: #DCE3F0;
     --radius: 10px;
+    --success: #16a34a;
+    --success-soft: #dcfce7;
+    --danger: #dc2626;
+    --danger-soft: #fee2e2;
   }
