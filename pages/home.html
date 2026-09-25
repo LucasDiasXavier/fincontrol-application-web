@@ -145,11 +145,24 @@
           <input type="number" id="valor" placeholder="R$ 0,00" />
         </div>
 
+        <div class="fc-form-group"></div>
+        <label class="fc-type-title">Selecione o tipo de transação</label>
         <div class="fc-type-toggle">
-          <input type="radio" name="tipo" id="fc-tipo-receita" />
-          <label for="fc-tipo-receita">Receita</label>
+    <input type="radio" name="tipo" id="fc-tipo-receita" />
+    <label for="fc-tipo-receita">
+      <svg class="fc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 6V18" />
+        <path d="M6 12H18" />
+      </svg>
+      Receita
+    </label>
           <input type="radio" name="tipo" id="fc-tipo-despesa" />
-          <label for="fc-tipo-despesa">Despesa</label>
+          <label for="fc-tipo-despesa">
+          <svg class="fc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12H19" />
+      </svg>
+Despesa
+      </label>
         </div>
 
         <div class="fc-modal-actions">

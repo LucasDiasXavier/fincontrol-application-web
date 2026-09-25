@@ -345,7 +345,13 @@ table.fc-table {
     display: block;
 }
 
-
+.fc-type-title {
+  display: block;             /* Garbe que fique em uma linha própria acima das opções */
+  font-size: 14px;       /* Tamanho de fonte levemente reduzido (14px) */
+  font-weight: 600;           /* Destaque em negrito */
+  color: #64748b;             /* Cinza escuro para boa leitura e elegância */
+  margin-bottom: 0.5rem;      /* Espaço entre o título e as opções de rádio */
+}
 
 /* Toggle Receita/Despesa mais moderno */
 .fc-type-toggle {
@@ -369,6 +375,82 @@ table.fc-table {
     cursor: pointer;
     transition: all 0.2s ease;
     
+}
+
+/* Agrupador principal */
+.fc-form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+/* Rótulo superior */
+.fc-type-title {
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: center;
+  color: #64748b;
+}
+
+/* Container dos botões */
+.fc-type-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: 80%;
+}
+
+/* Esconde as bolinhas padrão do radio */
+.fc-type-toggle input[type="radio"] {
+  display: none;
+}
+
+/* Estilo do botão reduzido */
+.fc-type-toggle label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 12px; /* Reduzido de 10px 16px para 6px 12px */
+  background-color: #f3f4f6;
+  border: 1.5px solid transparent;
+  border-radius: 6px;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+}
+
+/* Tamanho do SVG reduzido */
+.fc-icon {
+  width: 15px;
+  height: 15px;
+}
+
+/* Hover simples */
+.fc-type-toggle label:hover {
+  background-color: #e5e7eb;
+}
+
+/* Estado SELECIONADO - Receita (Verde) */
+#fc-tipo-receita:checked + label {
+  background-color: #dcfce7;
+  border-color: #22c55e;
+  color: #15803d;
+  font-weight: 600;
+}
+
+/* Estado SELECIONADO - Despesa (Vermelho) */
+#fc-tipo-despesa:checked + label {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+  color: #b91c1c;
+  font-weight: 600;
 }
 
 #fc-tipo-receita:checked ~ label[for="fc-tipo-receita"] {
