@@ -31,10 +31,26 @@ export function iniciarFormularioNovoLancamento(aoSalvarComSucesso) {
                 ? inputDescricaoOutros.value.trim()
                 : selectDescricao.value;
 
-        const valor = parseFloat(inputValor.value);
+        const valorDigitado = String(inputValor.value || '').trim();
+        let valorNormalizado = valorDigitado.replace(/\s+/g, '');
+
+        if (valorNormalizado.includes(',') && valorNormalizado.includes('.')) {
+            const ultimaVirgula = valorNormalizado.lastIndexOf(',');
+            const ultimoPonto = valorNormalizado.lastIndexOf('.');
+
+            if (ultimaVirgula > ultimoPonto) {
+                valorNormalizado = valorNormalizado.replace(/\./g, '').replace(',', '.');
+            } else {
+                valorNormalizado = valorNormalizado.replace(/,/g, '');
+            }
+        } else if (valorNormalizado.includes(',')) {
+            valorNormalizado = valorNormalizado.replace(',', '.');
+        }
+
+        const valor = Number.parseFloat(valorNormalizado);
         const data = new Date().toISOString().slice(0, 10);
 
-        if (!descricao || !tipoSelecionado || isNaN(valor) || valor <= 0) {
+        if (!descricao || !tipoSelecionado || Number.isNaN(valor) || valor <= 0) {
             mostrarAviso('Preencha todos os campos corretamente.', 'erro');
             return;
         }

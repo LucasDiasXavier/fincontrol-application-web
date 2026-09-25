@@ -39,7 +39,7 @@ main {
    Botão principal
    ============================================ */
 
-.fc-btn-primary {
+   .fc-btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -397,9 +397,11 @@ table.fc-table {
 /* Container dos botões */
 .fc-type-toggle {
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 8px;
   width: 80%;
+  margin: 0 auto;
 }
 
 /* Esconde as bolinhas padrão do radio */
@@ -457,6 +459,7 @@ table.fc-table {
     background: var(--success-soft);
     color: var(--success);
     border-color: var(--success);
+
 }
 
 #fc-tipo-despesa:checked ~ label[for="fc-tipo-despesa"] {
@@ -464,6 +467,8 @@ table.fc-table {
     color: var(--danger);
     border-color: var(--danger);
 }
+
+
 
 /* Ações do formulário */
 .fc-modal-actions {
@@ -543,6 +548,56 @@ table.fc-table {
 
 .fc-delete-btn:active {
     transform: scale(0.92);
+}
+
+.fc-confirm-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.fc-confirm-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.52);
+}
+
+.fc-confirm-modal-content {
+    position: relative;
+    width: min(420px, calc(100% - 32px));
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+    z-index: 1;
+}
+
+.fc-confirm-modal-content h3 {
+    margin: 0 0 10px;
+    color: var(--text);
+    font-size: 1.25rem;
+}
+
+.fc-confirm-modal-content p {
+    margin: 0 0 20px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.fc-confirm-modal-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.fc-confirm-modal-actions .fc-btn-primary,
+.fc-confirm-modal-actions .fc-btn-secondary {
+    flex: 0 0 auto;
+    min-width: 120px;
 }
 
 /* Responsividade do formulário */

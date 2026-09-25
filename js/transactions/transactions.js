@@ -13,6 +13,22 @@ export function adicionarTransacao(dados) {
 
     console.log('1. adicionarTransacao foi chamada');
 
+    const saldoAtual = transacoes.reduce(
+        function (acc, t) {
+            return acc + (t.tipo === 'receita' ? t.valor : -t.valor);
+        },
+        0
+    );
+
+    if (dados.tipo === 'despesa' && saldoAtual < dados.valor) {
+        mostrarAviso(
+            'Saldo insuficiente para esse lançamento de despesa.',
+            'erro'
+        );
+        alert('saldo insulficiente');
+        return false;
+    }
+
     const novaTransacao = {
         id: Date.now(),
         ...dados

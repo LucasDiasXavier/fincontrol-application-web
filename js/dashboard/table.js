@@ -2,6 +2,54 @@ import { escapeHtml } from '../utils/helpers.js';
 import { formatarDataExibicao, formatarMoeda } from '../utils/formatters.js';
 import { excluirTransacao } from '../transactions/transactions.js';
 
+function abrirModalConfirmacaoExclusao(id, aoExcluirComSucesso) {
+    const existente = document.getElementById('fc-confirm-delete-modal');
+
+    if (existente) {
+        existente.remove();
+    }
+
+    const modal = document.createElement('div');
+    modal.id = 'fc-confirm-delete-modal';
+    modal.className = 'fc-confirm-modal';
+    modal.innerHTML = `
+        <div class="fc-confirm-modal-backdrop"></div>
+        <div class="fc-confirm-modal-content" role="dialog" aria-modal="true" aria-labelledby="fc-confirm-delete-title">
+            <h3 id="fc-confirm-delete-title">Excluir lançamento?</h3>
+            <p>Esta ação não pode ser desfeita.</p>
+            <div class="fc-confirm-modal-actions">
+                <button type="button" class="fc-btn-secondary fc-confirm-cancel">Cancelar</button>
+                <button type="button" class="fc-btn-primary fc-confirm-delete">Excluir</button>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const cancelarBtn = modal.querySelector('.fc-confirm-cancel');
+    const confirmarBtn = modal.querySelector('.fc-confirm-delete');
+
+    cancelarBtn.addEventListener('click', function () {
+        modal.remove();
+    });
+
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.remove();
+        }
+    });
+
+    confirmarBtn.addEventListener('click', function () {
+        const sucesso = excluirTransacao(Number(id));
+
+        modal.remove();
+
+        if (sucesso && typeof aoExcluirComSucesso === 'function') {
+            aoExcluirComSucesso();
+        }
+    });
+}
+
 export function renderizarTabela(transacoes, aoExcluirComSucesso) {
     const corpo = document.getElementById('fc-table-body');
     corpo.innerHTML = '';
@@ -42,11 +90,7 @@ export function renderizarTabela(transacoes, aoExcluirComSucesso) {
 
     corpo.querySelectorAll('.fc-delete-btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
-            const sucesso = excluirTransacao(Number(btn.dataset.id));
-
-            if (sucesso && typeof aoExcluirComSucesso === 'function') {
-                aoExcluirComSucesso();
-            }
+            abrirModalConfirmacaoExclusao(btn.dataset.id, aoExcluirComSucesso);
         });
     });
 }

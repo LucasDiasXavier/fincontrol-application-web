@@ -97,8 +97,39 @@
         <span class="fc-card-note">Este mês</span>
       </div>
     </section>
+
+    <div class="fc-card" style="margin-top: 16px">
+
+    <div class="fc-grafico-header">
+
+        <div>
+            <h2 class="fc-section-title">
+                Receitas x Despesas
+            </h2>
+
+            <p class="fc-card-note">
+                Visão mensal
+            </p>
+        </div>
+
+
+        <select
+            id="fc-ano-grafico"
+            class="fc-year-select"
+        >
+        </select>
+
+    </div>
+
+
+    <div style="position: relative; height: 340px">
+
+        <canvas id="fc-grafico-mensal"></canvas>
+
+    </div>
   </div>
 
+  </div>
   <!-- Painel Resumo Financeiro -->
   <div class="fc-tab-panel" id="fc-panel-resumo">
     <section class="fc-section">
@@ -142,27 +173,50 @@
 
         <div class="fc-field">
           <label for="valor">Valor</label>
-          <input type="number" id="valor" placeholder="R$ 0,00" />
+          <input
+            type="number"
+            id="valor"
+            step="0.01"
+            min="0.01"
+            inputmode="decimal"
+            placeholder="R$ 0,00"
+          />
         </div>
 
         <div class="fc-form-group"></div>
         <label class="fc-type-title">Selecione o tipo de transação</label>
         <div class="fc-type-toggle">
-    <input type="radio" name="tipo" id="fc-tipo-receita" />
-    <label for="fc-tipo-receita">
-      <svg class="fc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 6V18" />
-        <path d="M6 12H18" />
-      </svg>
-      Receita
-    </label>
+          <input type="radio" name="tipo" id="fc-tipo-receita" />
+          <label for="fc-tipo-receita">
+            <svg
+              class="fc-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 6V18" />
+              <path d="M6 12H18" />
+            </svg>
+            Receita
+          </label>
           <input type="radio" name="tipo" id="fc-tipo-despesa" />
           <label for="fc-tipo-despesa">
-          <svg class="fc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M5 12H19" />
-      </svg>
-Despesa
-      </label>
+            <svg
+              class="fc-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12H19" />
+            </svg>
+            Despesa
+          </label>
         </div>
 
         <div class="fc-modal-actions">
