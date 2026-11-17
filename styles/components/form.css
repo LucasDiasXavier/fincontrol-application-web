@@ -1,0 +1,140 @@
+/* ============================================
+   Formulário
+   ============================================ */
+
+/* Campos */
+
+.fc-field {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fc-field label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.fc-field input,
+.fc-field select,
+.fc-desc-outros-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--bg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fc-field input:focus,
+.fc-field select:focus,
+.fc-desc-outros-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+    outline: none;
+}
+
+.fc-desc-outros-input {
+    display: none;
+    margin-top: 10px;
+}
+
+.fc-desc-outros-input.is-visible {
+    display: block;
+}
+
+
+/* Toggle Receita / Despesa */
+
+.fc-form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.fc-type-title {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-muted, #64748b);
+}
+
+.fc-type-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.fc-type-toggle input[type="radio"] {
+    display: none;
+}
+
+.fc-type-toggle label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: #f3f4f6;
+    border: 1.5px solid transparent;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+}
+
+.fc-type-toggle label:hover {
+    background-color: #e5e7eb;
+}
+
+.fc-icon {
+    width: 15px;
+    height: 15px;
+}
+
+/* Selecionado: Receita (verde) */
+#fc-tipo-receita:checked ~ label[for="fc-tipo-receita"] {
+    background: var(--success-soft, #dcfce7);
+    border-color: var(--success, #22c55e);
+    color: var(--success, #15803d);
+    font-weight: 600;
+}
+
+/* Selecionado: Despesa (vermelho) */
+#fc-tipo-despesa:checked ~ label[for="fc-tipo-despesa"] {
+    background: var(--danger-soft, #fee2e2);
+    border-color: var(--danger, #ef4444);
+    color: var(--danger, #b91c1c);
+    font-weight: 600;
+}
+
+
+/* Ações do formulário */
+
+.fc-modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.fc-modal-actions .fc-btn-primary,
+.fc-modal-actions .fc-btn-secondary {
+    flex: 1;
+}

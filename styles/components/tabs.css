@@ -1,0 +1,84 @@
+/* ============================================
+   Abas e painéis
+   ============================================ */
+
+/* Inputs de controle (escondidos) */
+
+#fc-tab-dashboard,
+#fc-tab-resumo,
+#fc-tab-novo {
+    display: none;
+}
+
+
+/* Navegação */
+
+.fc-tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 6px;
+    margin-bottom: 24px;
+}
+
+.fc-tab-nav label {
+    flex: 1;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: background 150ms ease, color 150ms ease;
+    user-select: none;
+}
+
+.fc-tab-nav label:hover {
+    color: var(--text);
+}
+
+.fc-tab-nav label .fa-coins,
+.fc-tab-nav label .fa-chart-line,
+.fc-tab-nav label .fa-money-bill-transfer {
+    font-size: 1.2rem;
+    margin-left: 0.4rem;
+    color: #b5f0cb;
+}
+
+#fc-tab-dashboard:checked ~ .fc-tab-nav label[for="fc-tab-dashboard"],
+#fc-tab-resumo:checked ~ .fc-tab-nav label[for="fc-tab-resumo"],
+#fc-tab-novo:checked ~ .fc-tab-nav label[for="fc-tab-novo"] {
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+
+/* Painéis */
+
+.fc-tab-panel {
+    display: none;
+}
+
+#fc-tab-dashboard:checked ~ #fc-panel-dashboard,
+#fc-tab-resumo:checked ~ #fc-panel-resumo,
+#fc-tab-novo:checked ~ #fc-panel-novo {
+    display: block;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 760px) {
+    .fc-tab-nav {
+        flex-direction: column;
+    }
+
+    .fc-tab-nav label {
+        flex: none;
+        width: 100%;
+    }
+}

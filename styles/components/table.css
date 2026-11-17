@@ -1,0 +1,49 @@
+/* ============================================
+   Tabela
+   ============================================ */
+
+table.fc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.fc-table th {
+    text-align: left;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0 10px 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.fc-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.fc-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Estado vazio */
+
+.fc-empty-row td {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 28px 10px;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 760px) {
+    table.fc-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

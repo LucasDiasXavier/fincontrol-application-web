@@ -1,0 +1,98 @@
+/* ============================================
+   Botões
+   ============================================ */
+
+/* Primário */
+
+.fc-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--primary);
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 150ms ease, transform 150ms ease;
+}
+
+.fc-btn-primary:hover {
+    background: #1740B8;
+}
+
+.fc-btn-primary:active {
+    transform: scale(0.97);
+}
+
+.fc-btn-primary svg {
+    width: 16px;
+    height: 16px;
+}
+
+.fc-btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* Secundário */
+
+.fc-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 150ms ease;
+}
+
+.fc-btn-secondary:hover {
+    background: var(--primary-soft);
+}
+
+
+/* Excluir (lixeira) */
+
+.fc-delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: background 150ms ease, color 150ms ease, transform 150ms ease;
+}
+
+.fc-delete-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.fc-delete-btn:hover {
+    background: var(--danger-soft, #fee2e2);
+    color: var(--danger, #dc2626);
+}
+
+.fc-delete-btn:active {
+    transform: scale(0.92);
+}

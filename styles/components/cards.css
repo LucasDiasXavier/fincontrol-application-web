@@ -1,0 +1,97 @@
+/* ============================================
+   Cards de resumo
+   ============================================ */
+
+.fc-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.fc-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fc-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fc-card-label {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.fc-card-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fc-card-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.fc-card-value {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.fc-card-note {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+
+/* Variações */
+
+.fc-card.saldo .fc-card-icon {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.fc-card.receitas .fc-card-icon {
+    background: var(--success-soft, #dcfce7);
+    color: var(--success, #16a34a);
+}
+
+.fc-card.receitas .fc-card-value {
+    color: var(--success, #16a34a);
+}
+
+.fc-card.despesas .fc-card-icon {
+    background: var(--danger-soft, #fee2e2);
+    color: var(--danger, #dc2626);
+}
+
+.fc-card.despesas .fc-card-value {
+    color: var(--danger, #dc2626);
+}
+
+
+/* Responsividade */
+
+@media (max-width: 1024px) {
+    .fc-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .fc-stats {
+        grid-template-columns: 1fr;
+    }
+}

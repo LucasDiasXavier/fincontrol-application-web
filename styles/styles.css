@@ -1,10 +1,23 @@
+/* Base */
 @import url('./base/root.css');
 @import url('./base/reset.css');
 @import url('./base/acessibility.css');
+
+/* Componentes */
 @import url('./components/navbar.css');
 @import url('./components/brand.css');
 @import url('./components/hamburguer.css');
 @import url('./components/link.css');
-@import url('./components/home.css');
 @import url('./components/footer.css');
+@import url('./components/buttons.css');
+@import url('./components/tabs.css');
+@import url('./components/cards.css');
+@import url('./components/table.css');
+@import url('./components/form.css');
+@import url('./components/modal.css');
+
+/* Páginas */
+@import url('./components/home.css');
+
+/* Utilitários */
 @import url('./utils/responsive.css');
