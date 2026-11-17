@@ -28,7 +28,6 @@ table.fc-table {
     border-bottom: none;
 }
 
-
 /* Estado vazio */
 
 .fc-empty-row td {
@@ -36,7 +35,6 @@ table.fc-table {
     color: var(--text-muted);
     padding: 28px 10px;
 }
-
 
 /* Responsividade */
 

@@ -55,7 +55,6 @@
     color: var(--text-muted);
 }
 
-
 /* Variações */
 
 .fc-card.saldo .fc-card-icon {
@@ -80,7 +79,6 @@
 .fc-card.despesas .fc-card-value {
     color: var(--danger, #dc2626);
 }
-
 
 /* Responsividade */
 

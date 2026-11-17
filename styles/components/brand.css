@@ -17,9 +17,21 @@
     width: 4px;
     border-radius: 2px;
   }
-  .fc-brand-mark span:nth-child(1) { height: 40%; background: var(--accent); }
-  .fc-brand-mark span:nth-child(2) { height: 70%; background: var(--primary); }
-  .fc-brand-mark span:nth-child(3) { height: 100%; background: var(--accent); }
+
+  .fc-brand-mark span:nth-child(1) {
+    height: 40%;
+    background: var(--accent);
+  }
+
+  .fc-brand-mark span:nth-child(2) {
+    height: 70%;
+    background: var(--primary);
+  }
+
+  .fc-brand-mark span:nth-child(3) {
+    height: 100%;
+    background: var(--accent);
+  }
 
   .fc-brand-name {
     font-family: 'IBM Plex Mono', monospace;
@@ -27,6 +39,11 @@
     font-weight: 600;
     letter-spacing: -0.02em;
   }
-  .fc-brand-name b { color: var(--primary); }
 
-  #fc-menu-switch { display: none; }
+  .fc-brand-name b {
+    color: var(--primary);
+  }
+
+  #fc-menu-switch {
+    display: none;
+  }

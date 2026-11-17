@@ -40,7 +40,6 @@
     cursor: not-allowed;
 }
 
-
 /* Secundário */
 
 .fc-btn-secondary {
@@ -64,7 +63,6 @@
 .fc-btn-secondary:hover {
     background: var(--primary-soft);
 }
-
 
 /* Excluir (lixeira) */
 

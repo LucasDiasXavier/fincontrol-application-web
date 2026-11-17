@@ -48,7 +48,6 @@
     display: block;
 }
 
-
 /* Toggle Receita / Despesa */
 
 .fc-form-group {
@@ -123,7 +122,6 @@
     color: var(--danger, #b91c1c);
     font-weight: 600;
 }
-
 
 /* Ações do formulário */
 

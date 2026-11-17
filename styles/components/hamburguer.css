@@ -11,6 +11,7 @@
     background: var(--bg-elevated);
     cursor: pointer;
   }
+
   .fc-menu-btn span {
     width: 18px;
     height: 2px;
@@ -18,6 +19,15 @@
     border-radius: 2px;
     transition: transform 150ms ease, opacity 150ms ease;
   }
-  #fc-menu-switch:checked ~ .fc-menu-btn span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-  #fc-menu-switch:checked ~ .fc-menu-btn span:nth-child(2) { opacity: 0; }
-  #fc-menu-switch:checked ~ .fc-menu-btn span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  #fc-menu-switch:checked~.fc-menu-btn span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  #fc-menu-switch:checked~.fc-menu-btn span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #fc-menu-switch:checked~.fc-menu-btn span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
