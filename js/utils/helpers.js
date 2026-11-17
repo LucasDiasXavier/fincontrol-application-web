@@ -1,4 +1,4 @@
-
+export const ANO_ATUAL = new Date().getFullYear();
 
 export function mesAtual() {
 
