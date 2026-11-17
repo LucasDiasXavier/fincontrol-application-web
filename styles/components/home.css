@@ -602,16 +602,18 @@ table.fc-table {
 
 /* Responsividade do formulário */
 @media (max-width: 600px) {
-    .fc-modal-actions {
-        flex-direction: column;
-    }
-
-    .fc-btn-primary,
-    .fc-btn-secondary {
+  .fc-confirm-modal-actions {
+        flex-direction: column-reverse;
         width: 100%;
     }
-}
 
+    .fc-confirm-modal-actions .fc-btn-primary,
+    .fc-confirm-modal-actions .fc-btn-secondary {
+        flex: 1;
+        width: 100%;
+        min-width: 0;
+    }
+}
 
 
 /* ============================================
